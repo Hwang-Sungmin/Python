@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!--아이템으로 불러와야 key, value를 가져올 수 있음-->
+    {% for key, value in days.items(): %}
+        <a href="/{{ value }}">{{ key }}</a><br>
+    {% endfor %}
+</body>
+</html>

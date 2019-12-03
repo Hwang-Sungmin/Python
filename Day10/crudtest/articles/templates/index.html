@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Index</h1>
+<div class="container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Title</th>
+                <th scope="col">Creator</th>
+                <th scope="col">Created at</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for article in articles %}
+                <th scope ="row">{{article.id}}</th>
+                <td><a href="{% url 'articles:show' article.id %}">{{article.title}}</a></td>
+                <td>{{article.creator}}</td>
+                <td>{{article.datetime_to_string}}</td>
+                
+            </tr>
+            {% endfor %}
+        </tbody>
+      </table>
+      <a href="{% url 'articles:new' %}" class="btn btn-info" >새글쓰기</a>
+{% endblock %}

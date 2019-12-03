@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Edit</h1>
+<div class="container">
+    <form action="{% url 'articles:edit' article.id %}" method="POST">
+        <input type="text" name="csrfmiddelewaretoken" value="{{csrf_token}}">
+        <div class="form-group">
+            <label for="title">Title</label>
+            <input value="{{article.title}}" name="title" type="text" class="form-control" id="title" placeholder="제목">
+        </div>
+        <div class="form-group">
+            <label for="contents">Contents</label>
+            <input name="contents" type="contents" class="form-control" id="contents" placeholder="컨텐츠">
+        </div>
+        <div class="form-group">
+            <label for="creator">Creator</label>
+            <input value={{article.creator}} readonly="true" name="creator" type="creator" class="form-control"
+                id="creator" placeholder="작가">
+        </div>
+        <button type="submit" class="btn btn-primary">수정하기</button>
+    </form>
+</div>
+{% endblock %}
