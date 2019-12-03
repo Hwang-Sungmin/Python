@@ -1,10 +1,10 @@
-<!-- article_form.html -->
+<!-- new_article.html -->
 {% extends 'base.html' %}
 {% load bootstrap4 %}
 
 {% block content %}
-<!--지금 보낸 url로 -->
-<form method="POST">
+<h1>New Article</h1>
+<form action="{% url 'board:new_article' %}" method="POST">
     {% csrf_token %}
     {% bootstrap_form form %}
     <input type="submit">
