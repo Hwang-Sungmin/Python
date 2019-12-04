@@ -19,6 +19,7 @@ $ rm -rf .git
 $ python -m venv venv
 
 # Windows 에서 가상(독립)환경 활성화
+$ source c:/Python/Day19/venv/Scripts/activate
 $ source venv/Scripts/activate
 # Mac os 에서 가상(독립)환경 활성화
 $ source venv/bin/activate

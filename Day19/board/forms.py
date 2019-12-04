@@ -1,13 +1,14 @@
 from django import forms
+# from django.db import models
 from .models import Article, Comment
 
+# django forms valdation
 class ArticleForm(forms.ModelForm):
     title = forms.CharField(min_length=2, strip=True)
-    keyword = forms.CharField(min_length=1, max_length=10)
     email = forms.EmailField()
-    class Meta : 
+    keyword = forms.CharField(min_length=1, max_length=10)
+    # date = forms.DateTimeField()
+    class Meta:
         model = Article
         # fields = '__all__'
-        # model 중에 필요한 애들만
-        # fields = ('title', 'content')
-        exclude = ['date']
+        exclude = ['date',]
